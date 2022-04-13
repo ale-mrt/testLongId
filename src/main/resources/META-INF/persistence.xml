@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configurazione della persistenza:  -->
+<!-- namespace: tramine cdn il file di configurazione prende le specifiche di persistence -->
+<persistence version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <!-- unità di persistenza: dichiara, in sostanza, una connessione al database. tale connessione può essere 
+    customizzata secondo le classiche modalità di configurazione di una connessione a db -->
+    <persistence-unit name="personPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/testdb" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="root" />
+        </properties>
+        <!-- a seconda di cosa si sta sviluppando potrebbe essere utile dichiarare qua le classi pojo alle quali hibernate dovrà
+        riferirsi utilizzando il tag class: di default lo fa in automatico -->
+    </persistence-unit>
+</persistence>
